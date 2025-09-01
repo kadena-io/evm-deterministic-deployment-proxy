@@ -95,6 +95,7 @@ async function writeFactoryDeployerTransaction(contract: CompilerOutputContract)
 	const filePath = path.join(__dirname, '../output/deployment.json')
 	const fileContents = `{
 	"gasPrice": 100000000000,
+	"deploymentBytecode": "${deploymentBytecode}",
 	"gasLimit": ${deploymentGas},
 	"signerAddress": "${signerAddress.reduce((x,y)=>x+=y.toString(16).padStart(2, '0'), '')}",
 	"transaction": "${signedEncodedTransaction.reduce((x,y)=>x+=y.toString(16).padStart(2, '0'), '')}",
