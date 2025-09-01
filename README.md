@@ -3,8 +3,8 @@ This is a proxy contract that can be deployed to any chain at the same address, 
 
 ## Usage
 ```bash
-npm install
-npm run deploy
+pnpm install
+pnpm run deploy
 ```
 
 
