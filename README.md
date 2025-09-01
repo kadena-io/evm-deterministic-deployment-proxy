@@ -4,9 +4,9 @@ This is a proxy contract that can be deployed to any chain at the same address, 
 ## Usage
 ```bash
 npm install
-npm run build
-./scripts/test.sh
+npm run deploy
 ```
+
 
 ### Details
 See `scripts/test.sh` (commented).  Change `JSON_RPC` environment variable to the chain of your choice (requires an unlocked wallet with ETH).  Notice that the script works against _any_ chain!  If the chain already has the deployer contract deployed to it, then you can just comment out the deployment steps (line 20 and 23) and everything else will still function as normal.  If you have already deployed your contract with it to the chain you are pointing at, the script will fail because your contract already exists at its address.
