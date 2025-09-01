@@ -3,11 +3,11 @@
 JSON_RPC_BASE="https://evm-testnet.chainweb.com/chainweb/0.0/evm-testnet"
 
 # extract the variables we need from json output
-ONE_TIME_SIGNER_ADDRESS="0x$(cat ../output/deployment.json | jq --raw-output '.signerAddress')"
-GAS_COST="0x$(printf '%x' $(($(cat ../output/deployment.json | jq --raw-output '.gasPrice') * $(cat ../output/deployment.json | jq --raw-output '.gasLimit'))))"
-TRANSACTION="0x$(cat ../output/deployment.json | jq --raw-output '.transaction')"
-DEPLOYER_ADDRESS="0x$(cat ../output/deployment.json | jq --raw-output '.address')"
-BYTECODE="0x$(cat ../output/deployment.json | jq --raw-output '.deploymentBytecode')"
+ONE_TIME_SIGNER_ADDRESS="0x$(cat output/deployment.json | jq --raw-output '.signerAddress')"
+GAS_COST="0x$(printf '%x' $(($(cat output/deployment.json | jq --raw-output '.gasPrice') * $(cat output/deployment.json | jq --raw-output '.gasLimit'))))"
+TRANSACTION="0x$(cat output/deployment.json | jq --raw-output '.transaction')"
+DEPLOYER_ADDRESS="0x$(cat output/deployment.json | jq --raw-output '.address')"
+BYTECODE="0x$(cat output/deployment.json | jq --raw-output '.deploymentBytecode')"
 
 echo "Deploying create2proxy:\n$DEPLOYER_ADDRESS"
 
